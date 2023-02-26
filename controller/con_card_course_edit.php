@@ -3,7 +3,10 @@
     include_once '../model/Course.php';
     $obj_name = new Course();
     $rs2 = $obj_name->getCourse();
-    foreach($rs2 as $result2){
+            // Read JSON Decode From encode to decode
+            $jsonCode = $rs2;
+            $jsonDecode = json_decode($jsonCode, true);
+            foreach ($jsonDecode as $result2){
         include "view_card_edit.php";
     }
 ?>

@@ -4,7 +4,10 @@
     $obj_name = new Course();
     $rs2 = $obj_name->getCourse();
     $no = 0;
-    foreach($rs2 as $result2){
+            // Read JSON Decode From encode to decode
+            $jsonCode = $rs2;
+            $jsonDecode = json_decode($jsonCode, true);
+            foreach ($jsonDecode as $result2){
         $no++;
     }
     echo $no;
